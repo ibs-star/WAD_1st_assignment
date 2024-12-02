@@ -8,3 +8,4 @@ document.addEventListener('DOMContentLoaded', function () {
         element.classList.add('fade-in');
     });
 });
+// update js code
