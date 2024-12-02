@@ -1,0 +1,92 @@
+/* Apply the background image to all pages */
+body {
+    background: url("spongebob-technology.gif") no-repeat center center fixed;
+    background-position: top left;  /* Optional: position the first image at the top-left corner */
+
+    background-repeat: repeat;  /* Make the GIF repeat both horizontally and vertically */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Keep your text readable */
+    color: #fff; /* White text for readability */
+}
+
+/* Header styles */
+header {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent header background */
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent footer */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    text-align: center;
+    padding-bottom: 60px; /* Prevent overlap with footer */
+}
+
+/* Selfie image */
+img.selfie {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Certificate image */
+img.certificate {
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Links and hover effect */
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 2s forwards; /* 2 seconds to fade in */
+}
+
+/* Define the fade-in animation */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
