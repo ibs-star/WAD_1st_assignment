@@ -9,3 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 // update js code
+document.addEventListener('DOMContentLoaded', function () {
+    // Wait for 3 seconds, then fade out the intro animation
+    setTimeout(() => {
+        const introOverlay = document.getElementById('intro-overlay');
+        introOverlay.classList.add('hidden'); // Add the 'hidden' class to trigger fade-out
+    }, 3000); // 3000ms = 3 seconds
+});
