@@ -1,17 +1,18 @@
 /* Apply the background image to all pages */
 body {
-    background: url("spongebob-technology.gif") no-repeat center center fixed;
+    background: url(backgroundcolour.jpg) no-repeat center center fixed;
     background-position: top left;  /* Optional: position the first image at the top-left corner */
 
     background-repeat: repeat;  /* Make the GIF repeat both horizontally and vertically */
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif; /* Keep your text readable */
+    font-family: 'Merriweather', serif; /* Merriweather with serif fallback */
     color: #fff; /* White text for readability */
 }
 
 /* Header styles */
 header {
+    font-weight: 300; /* Slimmer font weight */
     background: rgba(0, 0, 0, 0.7); /* Semi-transparent header background */
     padding: 10px 20px;
 }
@@ -33,7 +34,13 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
-
+nav ul li a {
+    text-decoration: none; /* Keep links clean without underlines */
+    font-weight: 300; /* Make navigation links slim */
+    font-family: 'CoFo Sans', sans-serif; /* Ensure CoFo Sans is applied */
+    font-size: 18px; /* Adjust size for readability */
+    color: white; /* Ensure it matches your header design */
+}
 /* Footer styles */
 footer {
     position: fixed;
@@ -116,4 +123,58 @@ img.certificate {
 #intro-overlay img {
     max-width: 80%; /* Ensure the GIF scales for smaller screens */
     max-height: 80%; /* Keep it proportional */
+}
+/* Navigation bar styling */
+nav ul {
+    display: flex; /* Ensure items are displayed horizontally */
+    justify-content: center; /* Center the navigation bar */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 20px; /* Adds horizontal spacing between menu items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Adjust text color to suit your design */
+    font-family: 'Cambria', serif; /* Ensure font matches the body */
+    font-size: 18px; /* Adjust font size as needed */
+}
+/* Keep header text styles as is */
+header {
+    color: white; /* Example: White text for header */
+}
+
+/* Keep footer text styles as is */
+footer {
+    color: white; /* Example: White text for footer */
+}
+
+/* Make all text outside header and footer black */
+body *:not(header *):not(footer *) {
+    color: black; /* Text outside header and footer becomes black */
+}
+@font-face {
+    font-family: 'CoFo Sans';
+    src: url('fonts/CoFoSans-Regular.woff') format('woff'); /* Adjust path and format */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'CoFo Sans', sans-serif; /* Set CoFo Sans as the default font */
+}
+#connectingGif {
+    display: none; /* Hide GIF by default */
+    position: fixed; /* Make it cover the screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Optional: add a semi-transparent background */
+    justify-content: center;
+    align-items: center;
 }
