@@ -1,180 +1,149 @@
-/* Apply the background image to all pages */
+/* Body styling */
 body {
-    background: url(backgroundcolour.jpg) no-repeat center center fixed;
-    background-position: top left;  /* Optional: position the first image at the top-left corner */
-
-    background-repeat: repeat;  /* Make the GIF repeat both horizontally and vertically */
     margin: 0;
     padding: 0;
-    font-family: 'Merriweather', serif; /* Merriweather with serif fallback */
-    color: #fff; /* White text for readability */
+    font-family: 'CoFo Sans', Arial, sans-serif; /* Default font */
+    background: url('backgroundcolour.jpg') no-repeat center center fixed; /* Background for body */
+    background-size: cover;
+    color: #fff;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-/* Header styles */
+/* Header styling */
 header {
-    font-weight: 300; /* Slimmer font weight */
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent header background */
-    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent header */
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-nav ul {
+header nav ul {
+    display: flex;
+    justify-content: center;
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    gap: 30px;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-nav ul li a {
-    color: #fff;
+header nav ul li a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
 }
-nav ul li a {
-    text-decoration: none; /* Keep links clean without underlines */
-    font-weight: 300; /* Make navigation links slim */
-    font-family: 'CoFo Sans', sans-serif; /* Ensure CoFo Sans is applied */
-    font-size: 18px; /* Adjust size for readability */
-    color: white; /* Ensure it matches your header design */
+
+header nav ul li a:hover {
+    color: #ff6f61;
 }
-/* Footer styles */
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('finalbackground.gif') no-repeat center center fixed; /* Fullscreen hero background */
+    background-size: cover;
+    text-align: center;
+    padding: 0 20px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero .social-links {
+    display: flex;
+    gap: 20px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.hero .social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero .social-links a:hover {
+    color: #ff6f61;
+    background: white;
+}
+
+/* Footer Styling */
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent footer */
-    color: #fff;
+    background: #1d1f21;
+    color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    border-top: 2px solid #ff6f61;
 }
 
-/* Main content */
-main {
-    padding: 20px;
-    text-align: center;
-    padding-bottom: 60px; /* Prevent overlap with footer */
-}
-
-/* Selfie image */
-img.selfie {
-    display: block;
-    margin: 20px auto;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Certificate image */
-img.certificate {
-    display: block;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Links and hover effect */
-/* Fade-in animation */
-.fade-in {
-    opacity: 0;
-    animation: fadeInAnimation 2s forwards; /* 2 seconds to fade in */
-}
-
-/* Define the fade-in animation */
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-/* Fullscreen intro overlay */
+/* Loading overlay */
 #intro-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000; /* Optional: Add a background color for contrast */
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Ensure it appears above all other content */
-    opacity: 1; /* Start fully visible */
-    transition: opacity 1s ease, visibility 1s ease; /* Smooth fade-out effect */
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease, visibility 1s ease;
 }
 
-/* Hide overlay when it fades out */
-#intro-overlay.hidden {
-    opacity: 0; /* Fully transparent */
-    visibility: hidden; /* Hide the element entirely */
-}
-
-/* Center the GIF */
 #intro-overlay img {
-    max-width: 80%; /* Ensure the GIF scales for smaller screens */
-    max-height: 80%; /* Keep it proportional */
-}
-/* Navigation bar styling */
-nav ul {
-    display: flex; /* Ensure items are displayed horizontally */
-    justify-content: center; /* Center the navigation bar */
-    list-style-type: none; /* Remove bullet points */
-    padding: 0;
-    margin: 0;
+    max-width: 80px;
+    height: auto;
+    animation: bounce 2s infinite;
 }
 
-nav ul li {
-    margin: 0 20px; /* Adds horizontal spacing between menu items */
+#intro-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
 }
 
-nav ul li a {
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* Adjust text color to suit your design */
-    font-family: 'Cambria', serif; /* Ensure font matches the body */
-    font-size: 18px; /* Adjust font size as needed */
-}
-/* Keep header text styles as is */
-header {
-    color: white; /* Example: White text for header */
-}
-
-/* Keep footer text styles as is */
-footer {
-    color: white; /* Example: White text for footer */
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Make all text outside header and footer black */
-body *:not(header *):not(footer *) {
-    color: black; /* Text outside header and footer becomes black */
-}
-@font-face {
-    font-family: 'CoFo Sans';
-    src: url('fonts/CoFoSans-Regular.woff') format('woff'); /* Adjust path and format */
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-    font-family: 'CoFo Sans', sans-serif; /* Set CoFo Sans as the default font */
-}
-#connectingGif {
-    display: none; /* Hide GIF by default */
-    position: fixed; /* Make it cover the screen */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Optional: add a semi-transparent background */
-    justify-content: center;
-    align-items: center;
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
