@@ -11,8 +11,9 @@ body {
 }
 
 /* Header styling */
+/* Header styling */
 header {
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent header */
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px 20px;
     position: fixed;
@@ -22,25 +23,66 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-header nav ul {
+/* Modify your existing header CSS */
+header nav {
     display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;  /* Add this */
 }
 
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease-in-out;
+/* Update the menu-icon CSS */
+.menu-icon {
+    display: flex;  /* Change this from 'none' to 'flex' */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: 20px;  /* Add some spacing */
 }
 
-header nav ul li a:hover {
-    color: #ff6f61;
+/* Hide the regular nav-links */
+.nav-links {
+    display: none;  /* Hide the regular navigation links */
+}
+
+/* Update the mobile menu styles */
+.nav-links.active {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Keep the menu icon spans the same */
+.menu-icon span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animation classes for the menu icon */
+.menu-icon.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -150,3 +192,349 @@ footer {
     align-items: flex-start;
     justify-content: center;
 }
+
+
+/* Header styling */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo text (Ibrahim Weah) in the navigation */
+header .logo a {
+    font-family: 'Pacifico', cursive; /* Pacifico font for the logo name */
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+}
+
+/* Navigation links (About, Skills, Contact) */
+header .nav-links a {
+    font-family: 'Poppins', sans-serif; /* Poppins font for the navigation items */
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+header .nav-links a:hover {
+    color: #ff6f61; /* Highlight color for hover effect */
+}
+
+/* Menu icon styling */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: 20px;
+}
+
+.menu-icon span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hide the regular nav-links */
+.nav-links {
+    display: none;
+}
+
+/* Dropdown menu styling */
+.nav-links.active {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #ff6f61;
+}
+
+/* Animation classes for the menu icon */
+.menu-icon.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Make sure this import is at the top of your CSS file if not already there */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+/* Update the logo styling */
+.logo a {
+    font-family: 'Archivo Black', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: normal; /* Changed from bold since Archivo Black is already bold */
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+    letter-spacing: 1px; /* Added for consistency with the title style */
+    text-transform: uppercase; /* Optional: if you want it in uppercase like the title */
+}
+
+.logo a:hover {
+    color: #ff6f61;
+}
+
+
+/* Update the logo styling */
+.logo {
+    position: relative; /* Add this to contain the animated underline */
+}
+
+.logo a {
+    font-family: 'Archivo Black', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative; /* Required for the underline positioning */
+}
+
+/* Animated underline effect */
+.logo a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px; /* Adjust this value to control distance from text */
+    width: 100%;
+    height: 2px; /* Adjust thickness of the underline */
+    background: linear-gradient(
+        to right,
+        transparent,
+        #ff6f61,
+        #ff6f61,
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: moveUnderline 2s linear infinite;
+}
+
+/* Animation for the moving underline */
+@keyframes moveUnderline {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Keep the hover effect */
+.logo a:hover {
+    color: #ff6f61;
+}
+
+
+/* Body text font */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Headings font */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Pacifico', cursive;
+}
+
+/* Body styling */
+body {
+    font-family: 'Poppins', sans-serif; /* Use Poppins for the body text */
+    background: url('backgroundcolour.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Header styling */
+header {
+    font-family: 'Pacifico', cursive; /* Use Pacifico for the header text */
+    /* Rest of the header styles */
+}
+
+
+/* Header Styling */
+header {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent header */
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo Styling (Ibrahim Weah) in the navigation */
+header .logo a {
+    font-family: 'Poppins', sans-serif; /* Use Poppins font for logo */
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+}
+
+/* Navigation Links (About, Skills, Contact) */
+header .nav-links a {
+    font-family: 'Poppins', sans-serif; /* Poppins font for navigation */
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+header .nav-links a:hover {
+    color: #ff6f61; /* Hover color */
+}
+
+
+/* Update the logo styling */
+.logo {
+    position: relative; /* Add this to contain the animated underline */
+}
+
+.logo a {
+    font-family: 'Poppins', sans-serif; /* Use Poppins font for logo */
+    color: white;
+    text-decoration: none;
+    font-size: 2rem; /* Adjusted size to match your design */
+    transition: color 0.3s ease-in-out;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative; /* Required for the underline positioning */
+}
+
+/* Animated curved underline effect */
+.logo a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px; /* Adjust this value to control distance from text */
+    width: 100%;
+    height: 4px; /* Adjust thickness of the underline */
+    background: linear-gradient(
+        to right,
+        transparent,
+        #ff6f61,
+        #ff6f61,
+        transparent
+    );
+    background-size: 200% 100%;
+    border-radius: 10px; /* Curved underline effect */
+    animation: moveUnderline 4s linear infinite; /* Slower movement */
+}
+
+/* Animation for the moving underline */
+@keyframes moveUnderline {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Keep the hover effect */
+.logo a:hover {
+    color: #ff6f61;
+}
+
+
+/* Update the logo styling */
+.logo a {
+    font-family: 'Archivo Black', sans-serif; /* Use the bold Archivo Black font */
+    color: white;
+    text-decoration: none;
+    font-size: 2.5rem; /* Adjust size to make it bold and noticeable */
+    font-weight: bold; /* Ensure the font is bold */
+    transition: color 0.3s ease-in-out;
+    letter-spacing: 2px; /* Adjust letter spacing for a slightly wider effect */
+    text-transform: uppercase; /* Uppercase for bold look */
+    position: relative;
+}
+
+/* Animated underline effect */
+.logo a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px; /* Adjust this value to control distance from text */
+    width: 100%;
+    height: 4px; /* Adjust thickness of the underline */
+    background: linear-gradient(
+        to right,
+        transparent,
+        #ff6f61,
+        #ff6f61,
+        transparent
+    );
+    background-size: 200% 100%;
+    border-radius: 10px; /* Curved underline effect */
+    animation: moveUnderline 4s linear infinite; /* Slower movement */
+}
+
+/* Animation for the moving underline */
+@keyframes moveUnderline {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
+/* Apply Archivo Black font to all paragraphs */
+p {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    line-height: 1.6;
+}
+
+
+/* Set paragraph font back to 'CoFo Sans' */
+.hero p {
+    font-family: 'CoFo Sans', Arial, sans-serif; /* Set CoFo Sans font */
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    color: white; /* Set text color to white */
+    line-height: 1.6; /* Set line height for readability */
+}
+

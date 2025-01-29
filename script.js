@@ -22,3 +22,29 @@
         });
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+    
+        menuIcon.addEventListener('click', function() {
+            menuIcon.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!menuIcon.contains(event.target) && !navLinks.contains(event.target)) {
+                menuIcon.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    
+        // Close menu when clicking a link
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                menuIcon.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    });
