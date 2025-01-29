@@ -1,10 +1,3 @@
-// Wait for the DOM content to be loaded
-document.addEventListener('DOMContentLoaded', function () {
-    // Fade-in elements on page load
-    const fadeInElements = document.querySelectorAll('.fade-in');
-    fadeInElements.forEach(element => {
-        element.classList.add('fade-in');
-    });
 
     // Fade out intro animation after 3 seconds
     setTimeout(() => {
@@ -28,4 +21,4 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-});
+
