@@ -9,8 +9,16 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
+            <div class="logo">
+                <a href="index.html">Ibrahim Weah</a>
+            </div>
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a>
                 <li><a href="about.html">About</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -21,9 +29,28 @@
         <h1>Contact Me</h1>
         <p>Email: <a href="mailto:i.f.weah@edu.salford.ac.uk">i.f.weah@edu.salford.ac.uk</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/ibrahimweah/" target="_blank">linkedin.com/in/ibrahimweah</a></p>
-    </main>
-    <footer>
+
+        <div style="width: 50%;">
+    <h2>Contact Us</h2>
+
+    <form action="/submit-form" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin: 10px 0;"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin: 10px 0;"><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 8px; margin: 10px 0;"></textarea><br>
+
+        <button type="submit" style="background-color: #333; color: white; padding: 10px 20px; border: none; cursor: pointer;">Send Message</button>
+    </form>
+        </div>
+</main>
+    <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #333; color: white; text-align: center; padding: 10px;">
         <p>&copy; 2024 Ibrahim Weah</p>
     </footer>
+    <script src="script.js"></script>
+
 </body>
 </html>
