@@ -249,6 +249,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+
 @keyframes bounce {
     0%, 100% {
         transform: translateY(0);
@@ -282,4 +283,60 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
+}
+.image-frame, .tennis-image {
+    border: 5px solid #333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.image-frame img:hover, .tennis-image img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Captions styling */
+figcaption {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    margin-top: 8px;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+figure:hover figcaption {
+    color: #000;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+@media (max-width: 768px) {
+    .image-frame img, .tennis-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .nav-links {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+.about-title {
+    font-family: monospace;
+    text-decoration: underline;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 100px; /* optional: pushes it down from the top */
 }
