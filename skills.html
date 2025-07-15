@@ -1,46 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Skills</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Skills</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <script>
+    // Select all elements with the class 'fade-in'
+    const faders = document.querySelectorAll('.fade-in');
+  
+    const appearOptions = {
+      threshold: 0.2, // % of the element in view before triggering
+      rootMargin: "0px 0px -50px 0px" // start the animation slightly before it's fully in view
+    };
+  
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // only animate once
+      });
+    }, appearOptions);
+  
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
+
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('blue.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    main {
+      padding-top: 100px;
+      padding-bottom: 80px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    h1.bounce {
+      font-family: monospace;
+      text-align: left;
+      position: relative;
+      animation: gentleBounce 2.5s infinite;
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+      margin-left: 10px;
+    }
+
+    @keyframes gentleBounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin-top: 40px;
+      color: white;
+      text-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+    }
+
+    ul {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      padding-left: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 111, 97, 0.3);
+      padding: 20px;
+      color: black;
+    }
+
+    /* Certificate row layout */
+    .certificate-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .certificate {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border: 4px solid #ff6f61;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .certificate:hover {
+      transform: scale(1.03);
+    }
+
+    /* BNY images layout */
+    .bny-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .bny-img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border: 4px solid #ff6f61;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 111, 97, 0.3);
+    }
+
+    .bny-description {
+      color: black;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
+
+    /* Divider lines */
+    .section-divider {
+      border: none;
+      border-top: 4px solid navy;
+      margin: 50px 0 30px;
+      width: 100%;
+    }
+
+    /* Power BI KPI description */
+    .kpi-description {
+      color: black;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-top: 20px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">Ibrahim Weah</a>
-            </div>
-            <div class="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a>
-                <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>My Skills</h1>
-        <ul>
-            <li>Python for Data Analysis</li>
-            <li>Power BI for Data Visualization</li>
-            <li>Website Design (HTML, CSS)</li>
-        </ul>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">Ibrahim Weah</a>
+      </div>
+      <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <!-- Add the certificate image -->
-        <h2>My Certification</h2>
-        <img src="certificate.jpeg" alt="Ibrahim Weah Certificate" class="certificate">
-    </main>
-    <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #333; color: white; text-align: center; padding: 10px;">
-        <p>&copy; 2024 Ibrahim Weah</p>
-    </footer>
-    <script src="script.js"></script>
+  <main>
+    <h1 class="bounce projects-title">Projects/Experience</h1>
 
+
+    <ul>
+      <li>Python for Data Analysis</li>
+      <li>Power BI for Data Visualization</li>
+      <li>Website Design (HTML, CSS, JavaScript)</li>
+    </ul>
+    
+    <!-- BNY Mellon Internship Showcase -->
+    <div class="bny-section">
+      <div class="bny-images">
+        <img src="bny.jpg" alt="BNY Internship 1" class="bny-img" />
+        <img src="bnyy.jpg" alt="BNY Internship 2" class="bny-img" />
+      </div>
+    
+      <p class="bny-description">
+        During my summer internship at BNY (Bank of New York)—the largest custodian bank in the world—I worked within the UK Income team, where I was introduced to the core processes of authorising cheque payments and handling client distributions. This hands-on role provided valuable insight into financial operations and broadened my understanding of investment servicing. I also had the opportunity to network with professionals across various departments and strengthen my knowledge of the global financial ecosystem. At the end of the internship, I delivered a project on mandate and cheque automation, which was well-received by senior managers and directors, showcasing my initiative and analytical approach.
+      </p>
+    </div>
+  
+    <hr class="section-divider">
+
+    <p style="color: black; font-family: 'Poppins', sans-serif; font-size: 1.05rem; line-height: 1.8; margin-top: 30px;">
+      I created a dashboard showcasing to the user the performance of three big social media companies which include Instagram, YouTube and Facebook, allowing for informed decision making and performance tracking. These insights include details such as revenue over time, sums of total engagement, audience count by region, and more. Each dashboard tab incorporates the themes and business branding colours related to the platform displayed to make the user interface more familiar to the user. There is also a navigation bar on the left-hand side which helps with the user experience (UX) of the dashboard design and improves functionality.
+    </p>
+
+    <!-- Power BI Link -->
+    <p style="text-align: center; margin-top: 20px;">
+      <a href="https://app.powerbi.com/links/pJtGCe6O5h?ctid=65b52940-f4b6-41bd-833d-3033ecbcf6e1&pbi_source=linkShare" 
+         target="_blank" 
+         style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #0e0bc8cf; text-decoration: underline;">
+        View Full Interactive Power BI Dashboard
+      </a>
+    </p>
+
+    <!-- Power BI Image -->
+    <img src="powerbi.jpg" 
+         alt="Power BI Dashboard Example" 
+         style="display: block; margin: 30px auto; max-width: 100%; height: auto; border: 3px solid #ff6f61; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 111, 97, 0.4);">
+
+    <p class="kpi-description">
+      At the top of each page in my dashboard you will see a title clearly stating what the page is about and below that there will be a row of numerical cards which display key performance indicators (KPI’s). These contain things that the stakeholders of the company would find the most important as they include things like revenue and overall engagement.
+    </p>
+
+    <hr class="section-divider">
+
+    <h2>Learning Certificates</h2>
+
+    <div class="certificate-row">
+      <img src="certificate.jpeg" alt="Ibrahim Weah Certificate" class="certificate" />
+      <img src="cirt.jpg" alt="Additional Certificate 1" class="certificate" />
+      <img src="cirtt.jpg" alt="Additional Certificate 2" class="certificate" />
+    </div>
+    <div class="idea-section">
+        <img src="idea.jpg" alt="iDEA Award" class="idea-img">
+        <a href="https://idea.org.uk/about" target="_blank" class="idea-link">
+          Learn more about the iDEA Award
+        </a>
+      </div>
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const faders = document.querySelectorAll('.fade-in');
+      
+          const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+          };
+      
+          const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            });
+          }, appearOptions);
+      
+          faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+          });
+        });
+      </script>
+      
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Ibrahim Weah</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

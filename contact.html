@@ -1,39 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title> 
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .email-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .mail-icon {
+      width: 100px;
+      height: auto;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transition: opacity 1s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const faders = document.querySelectorAll('.fade-in');
+      const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.2 });
+
+      faders.forEach(fader => appearOnScroll.observe(fader));
+    });
+  </script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">Ibrahim Weah</a>
-            </div>
-            <div class="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a>
-                <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Contact Me</h1>
-        <p>Email: <a href="mailto:i.f.weah@edu.salford.ac.uk">i.f.weah@edu.salford.ac.uk</a></p>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">Ibrahim Weah</a>
+      </div>
+      <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="bounce">Contact Me</h1>
+    <p style="font-family: monospace; margin-left: 10px; color: #333;">Feel free to reach out, I am always open to discussing new opportunities!</p>
+
+
+    <div class="email-container fade-in">
+      <img src="mail.gif" alt="Email icon" class="mail-icon">
+      <p><a href="ibrahimweah@yahoo.com">ibrahimweah@yahoo.com</a></p>
+    </div>
+    <div class="fade-in">
         <p>LinkedIn: <a href="https://www.linkedin.com/in/ibrahimweah/" target="_blank">linkedin.com/in/ibrahimweah</a></p>
+      </div>
+      
 
-        <div style="width: 50%;">
-    <h2>Contact Us</h2>
-
-    <form action="/submit-form" method="post">
+    <div style="width: 50%;">
+      <form action="/submit-form" method="post">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin: 10px 0;"><br>
 
@@ -44,13 +89,14 @@
         <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 8px; margin: 10px 0;"></textarea><br>
 
         <button type="submit" style="background-color: #333; color: white; padding: 10px 20px; border: none; cursor: pointer;">Send Message</button>
-    </form>
-        </div>
-</main>
-    <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #333; color: white; text-align: center; padding: 10px;">
-        <p>&copy; 2024 Ibrahim Weah</p>
-    </footer>
-    <script src="script.js"></script>
+      </form>
+    </div>
+  </main>
 
+  <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #333; color: white; text-align: center; padding: 10px;">
+    <p>&copy; 2024 Ibrahim Weah</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

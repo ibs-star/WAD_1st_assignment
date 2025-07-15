@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>class="about-bounce">About Me</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -32,26 +32,89 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
+                <li><a href="skills.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1 style="font-family: monospace;">About Me</h1>
-        <p class="about-text">I'm Ibrahim Weah, a passionate student studying Business Information Technology at the University of Salford. When I'm not busy with academics, I enjoy playing tennis, watching movies, and listening to music.</p>
+        <h1 class="bounce" style="font-family: monospace;">About Me</h1>
+        <p class="about-text">I'm Ibrahim Weah, a passionate student studying Business Information Technology at the University of Salford. When I'm not busy with academics, I enjoy playing tennis, watching movies, and travelling.</p>
 
-        <!-- Selfie Image -->
-        <figure class="image-frame fade-in">
-            <img src="ibrahim-selfie.jpg" alt="Ibrahim Weah Selfie" width="300">
-            <figcaption>This is me!</figcaption>
-        </figure>
+        
+<!-- 🖼️ Top Row: Selfie + Tennis -->
+<div class="media-text-row">
+    <div class="media-group">
+      <!-- Selfie Image -->
+<figure class="image-frame fade-in">
+    <img src="ibrahim-selfie.jpg" class="media-box" alt="Ibrahim Weah Selfie">
+    <figcaption>This is me!</figcaption>
+  </figure>
+  
+  <!-- Tennis Image -->
+  <figure class="tennis-image fade-in">
+    <img src="tennis.jpg" class="media-box" alt="Ibrahim playing tennis">
+    <figcaption>Enjoying some tennis 🎾!</figcaption>
+  </figure>  
+    </div>
+  
+    <!-- ✏️ Text beside top row -->
+    <div class="description-box">
+      <p>I love balancing both academics and fitness. Playing tennis helps me stay sharp and focused while enjoying the challenge of the game.</p>
+    </div>
+  </div>
+  
+  <!-- 📹 Video + Image Row -->
+<div class="media-text-row">
+    <!-- ✏️ Description Left of Videos -->
+    <div class="description-box">
+      <p>During my travels to Scandinavia, I picked up skateboarding, explored vibrant cities like Copenhagen and enjoyed some great food spots. These moments were unforgettable.</p>
+    </div>
+  
+    <div class="video-row">
+      <figure class="image-frame fade-in">
+        <video src="skate.mp4" class="media-box" width="350" controls autoplay muted loop></video>
+        <figcaption>Skateboarding in Sweden </figcaption>
+      </figure>
+  
+      <figure class="image-frame fade-in">
+        <video src="Denmark.mp4" class="media-box" width="350" controls autoplay muted loop></video>
+        <figcaption>Copenhagen sights 🇩🇰</figcaption>
+      </figure>
+  
+      <figure class="image-frame fade-in">
+        <img src="IMG_1154.jpeg" class="media-box" width="350" alt="Delicious pasta">
+        <figcaption> I loveee pasta! 🍝</figcaption>
+      </figure>
+    </div>
+  </div>
 
-        <!-- Tennis Image -->
-        <figure class="tennis-image fade-in">
-            <img src="tennis.jpg" alt="Ibrahim playing tennis" width="300">
-            <figcaption>Enjoying a tennis match at the local court!</figcaption>
+  <section class="manchester-hero-section fade-in">
+
+    <div class="top-container">
+      <div class="images-column">
+        <figure class="image-frame">
+          <img src="united.gif" alt="Manchester United" width="400">
+          <figcaption>Treble Winners/ Class of 99!</figcaption>
         </figure>
+  
+        <figure class="tennis-image">
+          <img src="ronaldo.jpg" alt="Cristiano Ronaldo" width="400">
+          <figcaption>Cristiano Ronaldo!</figcaption>
+        </figure>
+      </div>
+  
+      <div class="description-box">
+        <p>
+          Being from Manchester, I proudly support Manchester United, one of the biggest football clubs in the world.
+          The club has an impressive history filled with countless successes and a passionate global fanbase.
+        </p>
+      </div>
+    </div>
+  
+  </section>
+  
+
     </main>
     <footer>
         <p>&copy; 2024 Ibrahim Weah</p>

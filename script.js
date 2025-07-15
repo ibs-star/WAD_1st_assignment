@@ -9,8 +9,8 @@
 
     // Hide subheadings on scroll
     document.addEventListener('scroll', function () {
-        // Select all subheadings inside #about, #skills, and #contact sections
-        const subheadings = document.querySelectorAll("#about h2, #skills h2, #contact h2");
+        // Select all subheadings inside #about, #Projects, and #contact sections
+        const subheadings = document.querySelectorAll("#about h2, #projects h2, #contact h2");
 
         subheadings.forEach(subheading => {
             if (window.scrollY > 100) {
@@ -48,3 +48,39 @@
             });
         });
     });
+    document.addEventListener("DOMContentLoaded", () => {
+        const lazyElements = document.querySelectorAll(".lazy");
+      
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if(entry.isIntersecting) {
+              const el = entry.target;
+      
+              // For images
+              if (el.tagName.toLowerCase() === "img" && el.dataset.src) {
+                el.src = el.dataset.src;
+                el.onload = () => el.classList.add("fade-in");
+              }
+      
+              // For videos
+              if (el.tagName.toLowerCase() === "video" && el.dataset.src) {
+                el.src = el.dataset.src;
+                el.load();
+                el.classList.add("fade-in");
+              }
+      
+              observer.unobserve(el);
+            }
+          });
+        }, {
+          rootMargin: "0px 0px 100px 0px", // triggers a bit before element is fully in view
+        });
+      
+        lazyElements.forEach(el => {
+          // Initially hide elements by removing fade-in class (opacity 0)
+          el.classList.remove("fade-in");
+          observer.observe(el);
+        });
+      });
+      
+      
